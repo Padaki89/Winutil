@@ -63,4 +63,4 @@ Thanks a lot for spending your time helping Winutil grow. Thanks a lot! Keep roc
 
 ![Alt](https://repobeats.axiom.co/api/embed/aad37eec9114c507f109d34ff8d38a59adc9503f.svg "Repobeats analytics image")
 
-<p align="center">Support Made with Trust ❤️</p>
+### <p align="center">Support Made with Trust ❤️</p>
