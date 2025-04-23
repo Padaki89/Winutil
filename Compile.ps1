@@ -94,17 +94,11 @@ $($jsonAsObject | ConvertTo-Json -Depth 3)
     $script_content.Add($(Write-Output "`$sync.configs.$($psitem.BaseName) = @'`r`n$json`r`n'@ `| ConvertFrom-Json" ))
 }
 
-# Read the entire XAML file as a single string, preserving line breaks
-$xaml = Get-Content "$workingdir\xaml\inputXML.xaml" -Raw
+$xaml = (Get-Content "xaml\inputXML.xaml").replace("'","''")
 
 Update-Progress "Adding: Xaml " 90
 
-# Add the XAML content to $script_content using a here-string
-$script_content.Add(@"
-`$inputXML = @'
-$xaml
-'@
-"@)
+$script_content.Add($(Write-output "`$inputXML =  '$xaml'"))
 
 $script_content.Add($(Get-Content "scripts\main.ps1"))
 
